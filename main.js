@@ -6,7 +6,26 @@ document.getElementById('autumnBtn').addEventListener('click', setAutumn);
 document.getElementById('winterBtn').addEventListener('click', setWinter);
 document.getElementById('springBtn').addEventListener('click', setSpring);
 
+//////////////////////////////////////////////////////////////////////////////////
 
+function setSummer(text, song, ) {
+    setSeason('summer', '#1BA848', 'images/summer', 'songs/vivaldi-summer.mp3' );
+}
+
+function setAutumn() {
+    setSeason();
+}
+
+function setWinter() {
+    setSeason();
+}
+
+function setSpring() {
+    setSeason();
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
 
 // Event Functions
 function setSummer() {
@@ -100,3 +119,20 @@ function setSpring() {
     // - add active class to clicked button
     document.getElementById('springBtn').classList.add('activeBtn');
 }
+
+///////////////////////////////////////////////////////////////////////////////////
+
+function setSeason(name, song, text, color) {
+
+    document.getElementById('season-text').innerHTML = text;
+    document.getElementById('main-img').src = 'images/' + name.toLowerCase() + '.jpg';
+    document.getElementById('song').src = 'songs/' + song;
+    document.body.style.backgroundColor = color;
+
+    document.getElementById('springBtn').classList.remove('activeBtn');
+    document.getElementById('summerBtn').classList.remove('activeBtn');
+    document.getElementById('autumnBtn').classList.remove('activeBtn');
+    document.getElementById('winterBtn').classList.remove('activeBtn');
+}
+
+
