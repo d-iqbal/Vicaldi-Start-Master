@@ -6,133 +6,34 @@ document.getElementById('autumnBtn').addEventListener('click', setAutumn);
 document.getElementById('winterBtn').addEventListener('click', setWinter);
 document.getElementById('springBtn').addEventListener('click', setSpring);
 
-//////////////////////////////////////////////////////////////////////////////////
+////////
 
-function setSummer(text, song, ) {
-    setSeason('summer', '#1BA848', 'images/summer', 'songs/vivaldi-summer.mp3' );
-}
-
-function setAutumn() {
-    setSeason();
-}
-
-function setWinter() {
-    setSeason();
-}
-
-function setSpring() {
-    setSeason();
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////
-
-// Event Functions
 function setSummer() {
-    // - change concerto text
-    document.getElementById('season-text').innerHTML = 'summer';
-    
-    // - change main image
-    document.getElementById('main-img').src = 'images/summer.jpg';
-    
-    // - change page background color
-    document.body.style.backgroundColor = '#1BA848';
-    
-    // - change audio source
-    document.getElementById('song').src = 'songs/vivaldi-summer.mp3';
-    
-    // - remove active class from all buttons
-    document.getElementById('springBtn').classList.remove('activeBtn');
-    document.getElementById('summerBtn').classList.remove('activeBtn');
-    document.getElementById('autumnBtn').classList.remove('activeBtn');
-    document.getElementById('winterBtn').classList.remove('activeBtn');
-
-    // - add active class to clicked button
-    document.getElementById('summerBtn').classList.add('activeBtn');
+    setSeason('Summer', '#1BA848');
 }
 
 function setAutumn() {
-    // - change concerto text
-    document.getElementById('season-text').innerHTML = 'autumn';
-    
-    // - change main image
-    document.getElementById('main-img').src = 'images/autumn.jpg';
-    
-    // - change page background color
-    document.body.style.backgroundColor = '#FE6732';
-    
-    // - change audio source
-    document.getElementById('song').src = 'songs/vivaldi-autumn.mp3';
-    
-    // - remove active class from all buttons
-    document.getElementById('springBtn').classList.remove('activeBtn');
-    document.getElementById('summerBtn').classList.remove('activeBtn');
-    document.getElementById('autumnBtn').classList.remove('activeBtn');
-    document.getElementById('winterBtn').classList.remove('activeBtn');
-
-    // - add active class to clicked button
-    document.getElementById('autumnBtn').classList.add('activeBtn');
+    setSeason('Autumn', '#FE6732');
 }
 
 function setWinter() {
-    // - change concerto text
-    document.getElementById('season-text').innerHTML = 'winter';
-    
-    // - change main image
-    document.getElementById('main-img').src = 'images/winter.jpg';
-    
-    // - change page background color
-    document.body.style.backgroundColor = '#1C64B9';
-    
-    // - change audio source
-    document.getElementById('song').src = 'songs/vivaldi-winter.mp3';
-    
-    // - remove active class from all buttons
-    document.getElementById('springBtn').classList.remove('activeBtn');
-    document.getElementById('summerBtn').classList.remove('activeBtn');
-    document.getElementById('autumnBtn').classList.remove('activeBtn');
-    document.getElementById('winterBtn').classList.remove('activeBtn');
-
-    // - add active class to clicked button
-    document.getElementById('winterBtn').classList.add('activeBtn');
+    setSeason('Winter','#1C64B9');
 }
 
 function setSpring() {
-    // - change concerto text
-    document.getElementById('season-text').innerHTML = 'spring';
-    
-    // - change main image
-    document.getElementById('main-img').src = 'images/spring.jpg';
-    
-    // - change page background color
-    document.body.style.backgroundColor = '#0E94D1';
-    
-    // - change audio source
-    document.getElementById('song').src = 'songs/vivaldi-spring.mp3';
-    
-    // - remove active class from all buttons
-    document.getElementById('springBtn').classList.remove('activeBtn');
-    document.getElementById('summerBtn').classList.remove('activeBtn');
-    document.getElementById('autumnBtn').classList.remove('activeBtn');
-    document.getElementById('winterBtn').classList.remove('activeBtn');
-
-    // - add active class to clicked button
-    document.getElementById('springBtn').classList.add('activeBtn');
+    setSeason('Spring', '#0E94D1');
 }
 
-///////////////////////////////////////////////////////////////////////////////////
+/////////
 
-function setSeason(name, song, text, color) {
+function setSeason(name, color) {
 
-    document.getElementById('season-text').innerHTML = text;
+    document.getElementById('season-text').innerHTML = name;
     document.getElementById('main-img').src = 'images/' + name.toLowerCase() + '.jpg';
-    document.getElementById('song').src = 'songs/' + song;
+    document.getElementById('song').src = 'songs/' + name.toLowerCase() + '.mp3';
     document.body.style.backgroundColor = color;
 
-    document.getElementById('springBtn').classList.remove('activeBtn');
-    document.getElementById('summerBtn').classList.remove('activeBtn');
-    document.getElementById('autumnBtn').classList.remove('activeBtn');
-    document.getElementById('winterBtn').classList.remove('activeBtn');
+    document.getElementById(name.toLowerCase() + 'Btn').classList.add('activeBtn');
 }
 
 
